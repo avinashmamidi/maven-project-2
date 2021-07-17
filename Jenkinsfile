@@ -32,9 +32,9 @@ pipeline {
       }
 
     }
-    stage('Deploy to us-west-2') {
+    stage('Deploy to DEV') {
       environment {
-        HOSTS = "us-west-2"
+        HOSTS = "dev"
       }
       steps {
         sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""
@@ -46,9 +46,9 @@ pipeline {
         input('Do you want to proceed?')
       }
     }
-    stage('Deploy to ap-south-1') {
+    stage('Deploy to PROD') {
       environment {
-        HOSTS = "ap-south-1"
+        HOSTS = "prod"
       }
       steps {
         sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""
