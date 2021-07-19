@@ -22,8 +22,8 @@ pipeline {
     stage('SonarQube Scan') {
       steps {
         sh """mvn sonar:sonar \
-            -Dsonar.host.url=http://3.133.123.220:9000 \
-            -Dsonar.login=95edd9bb2e6f11fd67babccc35fbe6e689cdee25"""
+              -Dsonar.host.url=http://13.235.134.191:9000 \
+              -Dsonar.login=cf1c5c9cdcea0b5ee91ef679252a93750754c753"""
       }
     }
     stage('Upload to Artifactory') {
@@ -48,7 +48,7 @@ pipeline {
     }
     stage('Deploy to PROD') {
       environment {
-        HOSTS ="prod"
+        HOSTS = "prod"
       }
       steps {
         sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""

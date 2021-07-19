@@ -14,8 +14,8 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-  </properties>
-
+  </properties>       
+         
   <modules>
     <module>server</module>
     <module>webapp</module>
@@ -29,11 +29,11 @@
     </site>
     <snapshotRepository>
             <id>nexus</id>
-            <url>http://3.15.229.155:8081/repository/maven-snapshots/</url>
+            <url>http://13.127.50.215:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus</id>
-            <url>http://3.15.229.155:8081/repository/maven-releases/</url>
+            <url>http://13.127.50.215:8081/repository/maven-releases/</url>
         </repository>
   </distributionManagement>
 
