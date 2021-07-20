@@ -14,12 +14,3 @@
         owner: ansadmin
         group: ansadmin
         mode: 0644
-
-    - name: copying file with playbook
-      become: true
-      copy:
-        src: "{{ config_file_src_path }}"
-        dest: "{{ config_file_dest_path }}"
-        owner: ansadmin
-        group: ansadmin
-        mode: 0644
