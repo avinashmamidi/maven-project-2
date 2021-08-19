@@ -23,9 +23,9 @@ pipeline {
 
       steps {
         withSonarQubeEnv(credentialsId: 'Sonar') {
-          sh 'mvn clean package sonar:sonar'
+          sh 'mvn sonar:sonar'
       }
-      
+
       }
     }
     stage('Upload to Artifactory') {
