@@ -20,10 +20,12 @@ pipeline {
       }
     }
     stage('SonarQube Scan') {
+
       steps {
         withSonarQubeEnv(credentialsId: 'Sonar') {
           sh 'mvn clean package sonar:sonar'
       }
+      
       }
     }
     stage('Upload to Artifactory') {
