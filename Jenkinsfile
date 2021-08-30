@@ -20,12 +20,10 @@ pipeline {
       }
     }
     stage('SonarQube Scan') {
-
       steps {
-        withSonarQubeEnv(credentialsId: 'Sonar') {
-          sh 'mvn sonar:sonar'
-      }
-
+        sh """mvn sonar:sonar \
+        -Dsonar.host.url=http://35.153.144.224:9000 \
+        -Dsonar.login=4d308a503985dd5710b61bcc1089de072fc5ebb5 """
       }
     }
     stage('Upload to Artifactory') {
