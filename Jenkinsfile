@@ -46,6 +46,21 @@ pipeline {
         input('Do you want to proceed?')
       }
     }
+    stage('Deploy to Stage') {
+      environment {
+        HOSTS = "dev"
+      }
+      steps {
+        sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""
+      }
+
+    }
+    
+    stage('Approval') {
+      steps {
+        input('Do you want to proceed?')
+      }
+    }
     stage('Deploy to PROD') {
       environment {
         HOSTS = "prod"
