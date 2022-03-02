@@ -41,7 +41,7 @@ pipeline {
       }
 
     }
-    stage('Approval') {
+    stage('Approval for stage') {
       steps {
         input('Do you want to proceed?')
       }
