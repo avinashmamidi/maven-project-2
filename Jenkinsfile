@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-    WORKSPACE = "${env.WORKSPACE}"
-  }
+    JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-11.0.21.0.9-1.amzn2.0.1.x86_64'
+    }
   tools {
     maven 'localMaven'
     jdk 'localJdk'
