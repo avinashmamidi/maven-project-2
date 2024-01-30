@@ -187,6 +187,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit-dep</artifactId>
+
         <version>4.10</version>
         <scope>test</scope>
       </dependency>
@@ -215,7 +216,7 @@
   </dependencyManagement>
 
   <prerequisites>
-    <maven>3.8.5</maven>
+    <maven>3.0.3</maven>
   </prerequisites>
 
 </project>
